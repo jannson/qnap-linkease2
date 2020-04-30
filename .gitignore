@@ -1,0 +1,11 @@
+.git
+build
+binaries
+arm_64/linkease2
+arm-x19/linkease2
+arm-x31/linkease2
+arm-x41/linkease2
+x86/linkease2
+x86_64/linkease2
+x86_ce53xx/linkease2
+build.sh

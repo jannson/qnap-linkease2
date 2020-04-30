@@ -1,6 +1,6 @@
 #!/bin/sh
 CONF=/etc/config/qpkg.conf
-QPKG_NAME="LinkEase2"
+QPKG_NAME="LinkEaseAgent"
 #QPKG_ROOT=`/sbin/getcfg $QPKG_NAME Install_Path -f ${CONF}`
 #APACHE_ROOT=`/sbin/getcfg SHARE_DEF defWeb -d Qweb -f /etc/config/def_share.info`
 export QNAP_QPKG=$QPKG_NAME
@@ -15,7 +15,7 @@ function create_env()
     #(subshell &)
     CUR=`pwd`
     cd $PACKAGE_DIR
-    ./linkease2 -rootDir $PUBLIC_DIR > /tmp/linkease2-console.log 2>&1 & disown
+    ./LinkEaseAgent -rootDir $PUBLIC_DIR > /tmp/linkease2-console.log 2>&1 & disown
     cd $CUR
 }
 
@@ -30,7 +30,7 @@ case "$1" in
     ;;
 
   stop)
-    killall linkease2
+    killall LinkEaseAgent
     ;;
 
   restart)

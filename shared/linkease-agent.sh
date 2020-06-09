@@ -15,7 +15,7 @@ function create_env()
     #(subshell &)
     CUR=`pwd`
     cd $PACKAGE_DIR
-    ./LinkEaseAgent -rootDir $PUBLIC_DIR > /tmp/linkease2-console.log 2>&1 & disown
+    ./LinkEaseAgent > /tmp/linkease2-console.log 2>&1 & disown
     cd $CUR
 }
 

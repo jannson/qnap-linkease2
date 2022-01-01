@@ -8,4 +8,3 @@ arm-x41/LinkEaseAgent
 x86/LinkEaseAgent
 x86_64/LinkEaseAgent
 x86_ce53xx/LinkEaseAgent
-build.sh

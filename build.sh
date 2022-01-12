@@ -2,7 +2,7 @@
 
 source /home/janson/Documents/qnap.sh
 
-VER=0.5.3
+VER=0.6.6
 sed -i "s/QPKG_VER=\".*\"/QPKG_VER=\"${VER}\"/g" ./qpkg.cfg
 
 rm ./build/*.qpkg

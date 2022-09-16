@@ -2,11 +2,10 @@
 
 source /home/janson/Documents/qnap.sh
 
-VER=0.9.0
-sed -i "s/QPKG_VER=\".*\"/QPKG_VER=\"${VER}\"/g" ./qpkg.cfg
-
 rm ./build/*.qpkg
 BASEDIR=/projects/workspace-go/src/github.com/jiajia/sdk/cmd/client/release
+VER=`cat ${BASEDIR}/latest`
+sed -i "s/QPKG_VER=\".*\"/QPKG_VER=\"${VER}\"/g" ./qpkg.cfg
 
 mkdir build/upgrade
 cp ${BASEDIR}/qnap.amd64 build/upgrade/qnap.amd64
@@ -15,12 +14,14 @@ cp ${BASEDIR}/qnap.x86 build/upgrade/qnap.x86
 cp ${BASEDIR}/qnap.x86.json build/upgrade/qnap.x86.json
 cp ${BASEDIR}/qnap.arm build/upgrade/qnap.arm
 cp ${BASEDIR}/qnap.arm.json build/upgrade/qnap.arm.json
+cp ${BASEDIR}/qnap.arm64 build/upgrade/qnap.arm64
+cp ${BASEDIR}/qnap.arm64.json build/upgrade/qnap.arm64.json
 
 cp ${BASEDIR}/qnap.amd64 x86_64/LinkEaseAgent
 cp ${BASEDIR}/heif-converter.amd64 x86_64/heif-converter
 cp ${BASEDIR}/qnap.x86 x86/LinkEaseAgent
 cp ${BASEDIR}/qnap.x86 x86_ce53xx/LinkEaseAgent
-cp ${BASEDIR}/qnap.arm arm_64/LinkEaseAgent
+cp ${BASEDIR}/qnap.arm64 arm_64/LinkEaseAgent
 cp ${BASEDIR}/heif-converter.arm64 arm_64/heif-converter
 cp ${BASEDIR}/qnap.arm arm-x19/LinkEaseAgent
 cp ${BASEDIR}/qnap.arm arm-x31/LinkEaseAgent
